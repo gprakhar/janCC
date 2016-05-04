@@ -12,12 +12,14 @@ dill==0.2.5
 downhill==0.3.2
 ecos==2.0.4
 entrypoints==0.2.1
+et-xmlfile==1.0.1
 fancyimpute==0.0.14
 functools32==3.2.3.post2
 ipykernel==4.3.1
 ipython==4.2.0
 ipython-genutils==0.1.0
 ipywidgets==5.1.2
+jdcal==1.2
 Jinja2==2.8
 jsonschema==2.5.1
 jupyter==1.0.0
@@ -32,6 +34,7 @@ nbconvert==4.2.0
 nbformat==4.0.1
 notebook==4.2.0
 numpy==1.11.0
+openpyxl==2.3.5
 pandas==0.18.0
 pathlib2==2.1.0
 pexpect==4.0.1
@@ -56,3 +59,4 @@ toolz==0.7.4
 tornado==4.3
 traitlets==4.2.1
 widgetsnbextension==1.2.1
+XlsxWriter==0.8.6
