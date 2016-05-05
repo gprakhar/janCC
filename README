@@ -1,0 +1,29 @@
+List of steps to run the model
+
+1. Make sure you have Py 2.7 installed
+
+2. Clone repo
+
+3. Move inside repo folder; create virtualenv
+$ virtualenv venv
+
+3. Activate venv
+$ source venv/bin/activate
+
+4. Update pip
+$ pip install --upgrade pip
+
+5. install requirments
+$ pip install -r requirments.txt
+
+6. run notebook
+$ jupyter notebook
+
+7. From home page of notebook, click on the ipnb exptension file
+
+8. A new page will open, on this click on Cell to get a pop down
+
+9. Click 'Run All' from this pop down
+
+10. Read line by line to understand what is happening!
+
