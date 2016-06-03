@@ -25,11 +25,15 @@ import scipy as sp
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--time_format', '-t', help='Unit of time to be used for binning. \n eg. -t hours \n -t days', dafault='hours')
+parser.add_argument('--time_format', '-t', help='Unit of time to be used for binning. \n eg. -t hours \n -t days', default='hours')
 parser.add_argument('--first_login_filter', '-f', help='cutoff date for first_login value, only rows before this value are inculded for binning. format: YYYYMMDD \n eg. -f 19990101', default='')
-parser.add_argument('--bin_max', '-M', help='upper bound value for age_on_platform.\n eg. -M 48', type=int, dafault=25)
+parser.add_argument('--bin_max', '-M', help='upper bound value for age_on_platform.\n eg. -M 48', type=int, default=25)
 parser.add_argument('--bin_min', '-m', help='lower bound value for age_on_platform.\n eg. -m 48', type=int, default=0)
 parser.add_argument('--input_file', '-in', help='input file name. with atleast first_login and last_seen colums')
+
+args = parser.parse_args()
+if len(args) < 5:
+    
 
 first_login_filter = args.first_login_filter
 time_format = args.time_format
@@ -160,8 +164,7 @@ for index, row in user_data_binned_post30thApril.iterrows():
     if row["age_on_platform"] >= bin_min and row["age_on_platform"] < bin_max:
         user_data_binned_post30thApril.set_value(index, 'bin', 0)
 
-print "Number of users with age_on_platform between %d and %d %s = %d" % (bin_min, bin_max, time_format,\
- len(user_data_binned_post30thApril[user_data_binned_post30thApril.bin == 0])
+print "Number of users with age_on_platform between %d and %d %s = %d" % (bin_min, bin_max, time_format, len(user_data_binned_post30thApril[user_data_binned_post30thApril.bin == 0]))
 
 user_data_binned_post30thApril[user_data_binned_post30thApril.bin == 0].to_csv("user_retention_email-campaign_data_binned.csv", index=False)
 
